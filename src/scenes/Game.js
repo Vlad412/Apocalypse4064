@@ -1,4 +1,5 @@
 import Player from '../sprites/Player';
+import Zombie from '../sprites/Zombie';
 class Game extends Phaser.Scene {
     constructor (test) {
         super({
@@ -27,23 +28,21 @@ class Game extends Phaser.Scene {
 
         this.cursors = this.input.keyboard.createCursorKeys();
 
-        // this.player1 = this.add.sprite(this.sys.game.config.width / 2, this.sys.game.config.height / 2, 'spritesheet', 'handgun/idle/survivor-idle_handgun_0.png');
 
-        // this.anims.create({
-        //     key: 'idle',
-        //     frames: this.anims.generateFrameNames('spritesheet', { start: 0, end: 19, zeroPad: 0, prefix: 'handgun/idle/survivor-idle_handgun_', suffix: '.png' }),
-        //     frameRate: 20,
-        //     repeat: -1
-        // });
+        this.zombie = new Zombie({
+            scene: this,
+            x: 650,
+            y: 400,
+            key: 'spritesheet',
+            frame: 'skeleton-idle_0.png'
+        });
 
-        // this.player1.anims.play('idle');
-
-        // this.player.anims.play('idle');
-        console.log(this.player1);
+        console.log(this.zombie);
     }
 
     update () {
-        this.player.update();
+            this.player.update();
+            this.zombie.update();
         // if (this.cursors.left.isDown == true) 
         // {
         //     this.player.run(-200, 0);
