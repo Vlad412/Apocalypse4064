@@ -1,0 +1,440 @@
+{
+	"textures": [
+		{
+			"image": "player_idle.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 214,
+				"h": 1728
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "survivor-idle_handgun_0.png",
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 212,
+						"h": 156
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 32,
+						"y": 39,
+						"w": 212,
+						"h": 156
+					},
+					"sourceSize": {
+						"w": 253,
+						"h": 216
+					}
+				},
+				{
+					"filename": "survivor-idle_handgun_1.png",
+					"frame": {
+						"x": 1,
+						"y": 159,
+						"w": 212,
+						"h": 156
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 32,
+						"y": 39,
+						"w": 212,
+						"h": 156
+					},
+					"sourceSize": {
+						"w": 253,
+						"h": 216
+					}
+				},
+				{
+					"filename": "survivor-idle_handgun_19.png",
+					"frame": {
+						"x": 1,
+						"y": 159,
+						"w": 212,
+						"h": 156
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 32,
+						"y": 39,
+						"w": 212,
+						"h": 156
+					},
+					"sourceSize": {
+						"w": 253,
+						"h": 216
+					}
+				},
+				{
+					"filename": "survivor-idle_handgun_18.png",
+					"frame": {
+						"x": 1,
+						"y": 317,
+						"w": 212,
+						"h": 156
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 32,
+						"y": 38,
+						"w": 212,
+						"h": 156
+					},
+					"sourceSize": {
+						"w": 253,
+						"h": 216
+					}
+				},
+				{
+					"filename": "survivor-idle_handgun_2.png",
+					"frame": {
+						"x": 1,
+						"y": 317,
+						"w": 212,
+						"h": 156
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 32,
+						"y": 38,
+						"w": 212,
+						"h": 156
+					},
+					"sourceSize": {
+						"w": 253,
+						"h": 216
+					}
+				},
+				{
+					"filename": "survivor-idle_handgun_17.png",
+					"frame": {
+						"x": 1,
+						"y": 475,
+						"w": 211,
+						"h": 156
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 32,
+						"y": 38,
+						"w": 211,
+						"h": 156
+					},
+					"sourceSize": {
+						"w": 253,
+						"h": 216
+					}
+				},
+				{
+					"filename": "survivor-idle_handgun_3.png",
+					"frame": {
+						"x": 1,
+						"y": 475,
+						"w": 211,
+						"h": 156
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 32,
+						"y": 38,
+						"w": 211,
+						"h": 156
+					},
+					"sourceSize": {
+						"w": 253,
+						"h": 216
+					}
+				},
+				{
+					"filename": "survivor-idle_handgun_12.png",
+					"frame": {
+						"x": 1,
+						"y": 633,
+						"w": 211,
+						"h": 155
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 32,
+						"y": 37,
+						"w": 211,
+						"h": 155
+					},
+					"sourceSize": {
+						"w": 253,
+						"h": 216
+					}
+				},
+				{
+					"filename": "survivor-idle_handgun_8.png",
+					"frame": {
+						"x": 1,
+						"y": 633,
+						"w": 211,
+						"h": 155
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 32,
+						"y": 37,
+						"w": 211,
+						"h": 155
+					},
+					"sourceSize": {
+						"w": 253,
+						"h": 216
+					}
+				},
+				{
+					"filename": "survivor-idle_handgun_13.png",
+					"frame": {
+						"x": 1,
+						"y": 790,
+						"w": 211,
+						"h": 155
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 32,
+						"y": 37,
+						"w": 211,
+						"h": 155
+					},
+					"sourceSize": {
+						"w": 253,
+						"h": 216
+					}
+				},
+				{
+					"filename": "survivor-idle_handgun_7.png",
+					"frame": {
+						"x": 1,
+						"y": 790,
+						"w": 211,
+						"h": 155
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 32,
+						"y": 37,
+						"w": 211,
+						"h": 155
+					},
+					"sourceSize": {
+						"w": 253,
+						"h": 216
+					}
+				},
+				{
+					"filename": "survivor-idle_handgun_15.png",
+					"frame": {
+						"x": 1,
+						"y": 947,
+						"w": 211,
+						"h": 155
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 32,
+						"y": 38,
+						"w": 211,
+						"h": 155
+					},
+					"sourceSize": {
+						"w": 253,
+						"h": 216
+					}
+				},
+				{
+					"filename": "survivor-idle_handgun_5.png",
+					"frame": {
+						"x": 1,
+						"y": 947,
+						"w": 211,
+						"h": 155
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 32,
+						"y": 38,
+						"w": 211,
+						"h": 155
+					},
+					"sourceSize": {
+						"w": 253,
+						"h": 216
+					}
+				},
+				{
+					"filename": "survivor-idle_handgun_16.png",
+					"frame": {
+						"x": 1,
+						"y": 1104,
+						"w": 211,
+						"h": 155
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 32,
+						"y": 38,
+						"w": 211,
+						"h": 155
+					},
+					"sourceSize": {
+						"w": 253,
+						"h": 216
+					}
+				},
+				{
+					"filename": "survivor-idle_handgun_4.png",
+					"frame": {
+						"x": 1,
+						"y": 1104,
+						"w": 211,
+						"h": 155
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 32,
+						"y": 38,
+						"w": 211,
+						"h": 155
+					},
+					"sourceSize": {
+						"w": 253,
+						"h": 216
+					}
+				},
+				{
+					"filename": "survivor-idle_handgun_10.png",
+					"frame": {
+						"x": 1,
+						"y": 1261,
+						"w": 211,
+						"h": 154
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 32,
+						"y": 37,
+						"w": 211,
+						"h": 154
+					},
+					"sourceSize": {
+						"w": 253,
+						"h": 216
+					}
+				},
+				{
+					"filename": "survivor-idle_handgun_11.png",
+					"frame": {
+						"x": 1,
+						"y": 1417,
+						"w": 211,
+						"h": 154
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 32,
+						"y": 37,
+						"w": 211,
+						"h": 154
+					},
+					"sourceSize": {
+						"w": 253,
+						"h": 216
+					}
+				},
+				{
+					"filename": "survivor-idle_handgun_9.png",
+					"frame": {
+						"x": 1,
+						"y": 1417,
+						"w": 211,
+						"h": 154
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 32,
+						"y": 37,
+						"w": 211,
+						"h": 154
+					},
+					"sourceSize": {
+						"w": 253,
+						"h": 216
+					}
+				},
+				{
+					"filename": "survivor-idle_handgun_14.png",
+					"frame": {
+						"x": 1,
+						"y": 1573,
+						"w": 211,
+						"h": 154
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 32,
+						"y": 38,
+						"w": 211,
+						"h": 154
+					},
+					"sourceSize": {
+						"w": 253,
+						"h": 216
+					}
+				},
+				{
+					"filename": "survivor-idle_handgun_6.png",
+					"frame": {
+						"x": 1,
+						"y": 1573,
+						"w": 211,
+						"h": 154
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 32,
+						"y": 38,
+						"w": 211,
+						"h": 154
+					},
+					"sourceSize": {
+						"w": 253,
+						"h": 216
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:8eb33d4815512c46bbae7f197e4aff6f:dd7cbe36d35120a93a209ba6d114e758:a29a046d3956be1006ff68ea58941ba7$"
+	}
+}
