@@ -60,39 +60,6 @@ class Game extends Phaser.Scene {
         this.player.update();
         this.zombie.update();
 
-        // this.config.physics.arcade.moveToObject(this.zombie, this.player, 5);
-        // if (this.cursors.left.isDown == true) 
-        // {
-        //     this.player.run(-200, 0);
-        //     console.log('touche appuyée');
-        // }
-
-        // if (this.cursors.left.isDown) {
-        //     this.player.run(-200, 0);
-        //     this.player.anims.play('left', true);
-        // }
-
-        // if (this.cursors.left.isDown) {
-        //     this.player.anims.play('idle');
-        // }
-
-        //  if (this.cursors.left.isDown) {
-        //     this.player.run(-200, 0);
-        //     this.player.anims.play('walk');
-        // } else if (this.cursors.right.isDown) {
-        //     this.player.run(200, 0);
-        //     this.player.anims.play('walk');
-        // } else if (this.cursors.up.isDown) {
-        //     this.player.run(0, -200);
-        //     this.player.anims.play('walk');
-        // } else if (this.cursors.down.isDown) {
-        //     this.player.run(0, 200);
-        //     this.player.anims.play('walk');
-        // } else {
-        //     this.player.run(0, 0);
-        //     this.player.anims.play('idle');
-        //     // this.setVelocity(0);
-        // }
     }
 
 }

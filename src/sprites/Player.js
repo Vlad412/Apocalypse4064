@@ -32,7 +32,6 @@ export default class Player extends Phaser.GameObjects.Sprite {
         } else {
             this.run(0, 0);
             this.anims.play('idle', true);
-            // this.setVelocity(0);
         }
 
     }
