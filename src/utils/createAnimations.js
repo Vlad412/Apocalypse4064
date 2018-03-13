@@ -23,7 +23,7 @@ export default function createAnimations(scene) {
     scene.anims.create({
         key: 'zombie_walk',
         frames: scene.anims.generateFrameNames('spritesheet', { start: 0, end: 16, zeroPad: 0, prefix: 'skeleton-move_', suffix: '.png' }),
-        frameRate: 16,
+        frameRate: 24,
         repeat: -1
     });
 

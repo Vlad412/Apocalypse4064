@@ -7,6 +7,7 @@ class Game extends Phaser.Scene {
         });
         this.player;
         this.cursors;
+        this.config = test;
     }
 
     preload () {
@@ -37,12 +38,29 @@ class Game extends Phaser.Scene {
             frame: 'skeleton-idle_0.png'
         });
 
-        console.log(this.zombie);
+        this.zombie.create();
+
+
+        // peut-être utiliser les tweens pour super-pouvoirs
+        // this.tweens.add({
+        //     targets: this.zombie,
+        //     x: this.player.x,
+        //     y: this.player.y,
+        //     duration: 6000,
+        //     ease: 'Cubic',
+        //     easeParams: [1.5, 0.5],
+        //     delay: 1000
+        // });
+
+        // console.log(this.sys.game.config.physics.moveToObject());
+
     }
 
     update () {
-            this.player.update();
-            this.zombie.update();
+        this.player.update();
+        this.zombie.update();
+
+        // this.config.physics.arcade.moveToObject(this.zombie, this.player, 5);
         // if (this.cursors.left.isDown == true) 
         // {
         //     this.player.run(-200, 0);
