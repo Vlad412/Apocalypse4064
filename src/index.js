@@ -2,6 +2,7 @@ import 'phaser';
 // import { config } from '../config';
 import Boot from './scenes/Boot';
 import Game from './scenes/Game';
+import GameOver from './scenes/GameOver';
 
 let config = {
     type: Phaser.WEBGL,
@@ -17,7 +18,8 @@ let config = {
     },
     scene: [
         Boot,
-        Game
+        Game,
+        GameOver
     ]
 };
 

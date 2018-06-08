@@ -11,11 +11,22 @@ class Boot extends Phaser.Scene {
         this.load.image('ground', 'assets/images/ground_texture.jpg');
 
         //load player
-        this.load.atlas('player_idle', 'assets/player/player_idle.png', 'assets/player/player_idle.json');
-        this.load.atlas('spritesheet', 'assets/sprite/spritesheet.png', 'assets/sprite/spritesheet.json');
+        // this.load.atlas('spritesheet', 'assets/sprite/spritesheet.png', 'assets/sprite/spritesheet.json');
+
+        // test new
+        this.load.atlas('spritesheet', 'assets/sprite_new/spritesheet.png', 'assets/sprite_new/spritesheet.json');
 
         this.load.image('logo', 'assets/logo.png');
-        //another player spritesheet
+
+        this.load.image('crosshair', 'assets/images/crosshair.png');
+
+        this.load.audio('gun_shoot', 'assets/audio/pistol_effect.mp3');
+        // new version small sprites
+
+        this.load.atlas('spritesheet_mini', 'assets/sprite_mini/spritesheet.png', 'assets/sprite_mini/spritesheet.json');
+
+        //bullet
+        this.load.image('bullet', 'assets/images/bullet.png');
 
         // this.load.spritesheet('dude','src/games/firstgame/assets/dude.png',{ frameWidth: 32, frameHeight: 48 });
 
