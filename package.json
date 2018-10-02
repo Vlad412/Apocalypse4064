@@ -4,7 +4,7 @@
   "description": "School project",
   "main": "src/index.js",
   "scripts": {
-    "dev": "webpack --mode development --watch & live-server",
+    "dev": "webpack --mode development --watch",
     "start": "webpack-dev-server"
   },
   "author": "Vlad412",
@@ -14,7 +14,7 @@
     "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.6.1",
     "raw-loader": "^0.5.1",
-    "webpack": "^4.1.1",
+    "webpack": "^4.19.1",
     "webpack-cli": "^2.0.12",
     "webpack-dev-server": "^2.11.0"
   },

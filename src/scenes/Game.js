@@ -10,7 +10,6 @@ class Game extends Phaser.Scene {
         this.config = test;
 
         this.variableSpawn = 1000;
-        this.zombies = [];
     }
 
     preload () {
@@ -39,84 +38,33 @@ class Game extends Phaser.Scene {
         this.cursors = this.input.keyboard.createCursorKeys();
         console.log(this.cursors);
 
-
-        // let bb = this.add.sprite(40, 40, 'logo').setOrigin(0, 0);
-
-        // peut-être utiliser les tweens pour super-pouvoirs
-        // this.tweens.add({
-        //     targets: this.zombie,
-        //     x: this.player.x,
-        //     y: this.player.y,
-        //     duration: 6000,
-        //     ease: 'Cubic',
-        //     easeParams: [1.5, 0.5],
-        //     delay: 1000
-        // });
-
-        // clavier
-        // this.keys = {
-        //     up: this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.UP),
-        //     left: this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT),
-        //     right: this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT),
-        //     down: this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.DOWN)
-        // };
-
-
-        // collisions
-        // console.log(this.player);
-        // this.physics.add.collider(this.player, this.zombie, () => {
-        //     console.log('test');
-        // });
-
-        // zombie spawns
-
-        // if (this.zombies < 10) {
-        //     setInterval(() => {
-        //         this.zombies.push(this.zombie = new Zombie({
-        //             scene: this,
-        //             x: this.getRand(300, 700),
-        //             y: this.getRand(200, 560),
-        //             key: 'spritesheet_mini',
-        //             frame: 'idle/skeleton-idle_0.png'
-        //         }));
-        //         this.zombie.create();
-        //     }, this.getRand(500, 1000));
-
-        //     setTimeout(() => {
-        //         console.log(this.zombies);
-        //     }, 7000);
-        // }
-
-        // let variableSpawn = this.getRand(3000, 7000);
-        // let spawn = true;
-        // let zombies = [];
-
-        // setInterval(() => {
-        //     if (spawn)  {
-        //         new Zombie({
-        //             scene: this,
-        //             x: this.getRand(50, 700),
-        //             y: this.getRand(10, 560),
-        //             key: 'spritesheet_mini',
-        //             frame: 'idle/skeleton-idle_0.png'
-        //         });
-        //     }
-        //     spawn = false;
-        //     console.log('ya' + zombies);
-        // }, 5000);
-
         //spawneur de zombies
         this.timedEvent = this.time.addEvent({ delay: 3000, callback: this.spawnZombie, callbackScope: this, repeat: 10 });
+
+
+        //création du groupe de zombies (sans spawn)
+        this.zombies = this.physics.add.group({
+            classType: Zombie,
+            maxSize: 10,
+            runChildUpdate: true
+        });
+
+        //test collision balle -> zombie
+        if (this.zombies) {
+            console.log("salut en dessous c'est le zombie à tester lelz");
+            this.physics.add.overlap(this.zombies, this.player.bullets, this.collisionBalleZombie);
+        }
+
+    }
+
+    collisionBalleZombie (zombieEnQuestion) {
+        console.log('collision okey ftw');
+        zombieEnQuestion.death();
+
     }
 
     update () {
         this.player.update();
-        if (this.zombies.length > 0) {
-            this.zombies.forEach((zomb) => {
-                zomb.update();
-            });
-            // this.zombie.update();
-        }
 
         // visée à la souris
         this.crosshair.x = this.input.activePointer.x;
@@ -128,18 +76,23 @@ class Game extends Phaser.Scene {
             this.scene.start('GameOver');
             console.log('gameover');
         }
+
+        //compteur de zombies (debug)
+        if (this.zombies) {
+            console.log(this.zombies.countActive(true));
+        }
     }
 
     spawnZombie () {
         console.log('fonction spawnZombie appellée');
-        this.zombies.push(this.zombie = new Zombie({
-            scene: this,
-            x: this.getRand(300, 700),
-            y: this.getRand(200, 560),
-            key: 'spritesheet_mini',
-            frame: 'idle/skeleton-idle_0.png'
-        }));
-        this.zombie.create();
+
+        let zomb = this.zombies.get();
+
+        if (zomb) {
+            console.log(this.zombies.countActive(true));
+            zomb.spawn(this.getRand(300, 700), this.getRand(200, 560));
+        }
+
     }
 
 }

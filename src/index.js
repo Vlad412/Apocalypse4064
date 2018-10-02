@@ -1,14 +1,15 @@
 import 'phaser';
 // import { config } from '../config';
 import Boot from './scenes/Boot';
+import Menu from './scenes/Menu';
 import Game from './scenes/Game';
 import GameOver from './scenes/GameOver';
 
 let config = {
     type: Phaser.WEBGL,
     parent: 'content',
-    width: 800,
-    height: 600,
+    width: window.innerWidth,
+    height: window.innerHeight,
     physics: {
         default: 'arcade',
         arcade: {
@@ -18,6 +19,7 @@ let config = {
     },
     scene: [
         Boot,
+        Menu,
         Game,
         GameOver
     ]

@@ -20,6 +20,9 @@ class Boot extends Phaser.Scene {
 
         this.load.image('crosshair', 'assets/images/crosshair.png');
 
+        //bullet skin just for test
+        this.load.image('bullet', 'assets/images/bullet.png');
+
         this.load.audio('gun_shoot', 'assets/audio/pistol_effect.mp3');
         // new version small sprites
 
@@ -27,6 +30,9 @@ class Boot extends Phaser.Scene {
 
         //bullet
         this.load.image('bullet', 'assets/images/bullet.png');
+
+        //menu
+        this.load.spritesheet('menu', 'assets/game_gui_menu.png',{ frameWidth: 300, frameHeight: 150, endFrame: 8 });
 
         // this.load.spritesheet('dude','src/games/firstgame/assets/dude.png',{ frameWidth: 32, frameHeight: 48 });
 
@@ -47,7 +53,7 @@ class Boot extends Phaser.Scene {
     create () {
         createAnimations(this);
         console.log("BOOTED");
-        this.scene.start('Game');
+        this.scene.start('Menu');
 
     }
 }

@@ -1,3 +1,4 @@
+import {Bullet} from './Bullet';
 export default class Player extends Phaser.GameObjects.Sprite {
     constructor (config) {
         super(config.scene, config.x, config.y, config.key, config.frame);
@@ -5,7 +6,11 @@ export default class Player extends Phaser.GameObjects.Sprite {
         config.scene.add.existing(this);
         this.scene = config.scene;
         this.gunActive = false;
-        this.hp = 100;
+        this.hp = 10000;
+
+
+        this.bullets;
+        this.speed;
     }
 
     run (velX, velY) {
@@ -17,46 +22,78 @@ export default class Player extends Phaser.GameObjects.Sprite {
 
     create () {
 
-        this.scene.crosshair = this.scene.add.image(this.scene.sys.game.config.width / 2, this.scene.sys.game.config.height / 2,'crosshair');
+        //collision bords de map
+        this.body.collideWorldBounds = true;
 
+        //variables pour viseur & vélocité
+        //let velocity = new Phaser.Math.Vector2();
+        //let line = new Phaser.Geom.Line();
+        this.velocity = new Phaser.Math.Vector2();
+        this.line = new Phaser.Geom.Line();
+
+        //création du viseur
+        // this.scene.input.on('pointermove', (pointer) => {
+        //     console.log('la souris bouge' + angle);
+        //     let angle = Phaser.Math.Angle.Between(this.x, this.y, pointer.x, pointer.y);
+
+        //     Phaser.Geom.Line.SetToAngle(line, this.x + Math.cos(angle) * 60, this.y + Math.sin(angle) * 60, angle, 400);
+        //     this.scene.physics.velocityFromRotation(angle, 3000, velocity);
+        //     gfx.clear().strokeLineShape(line);
+        // }, this);
+
+        this.scene.crosshair = this.scene.add.image(this.scene.sys.game.config.width / 2, this.scene.sys.game.config.height / 2, 'crosshair');
+
+        //son des balles
         this.gun = this.scene.sound.add('gun_shoot');
+
+        //création des balles
+        this.bullets = this.scene.physics.add.group({
+            classType: Bullet,
+            maxSize: 10,
+            runChildUpdate: true
+        });
+
 
         //size
         this.body.setSize(50, 50, true);
         this.body.setCircle(20);
 
         document.addEventListener("click", () => {
-            console.log('BAM !!');
+            console.log('bullets group : ' + this.bullets);
+
+            //let angle = Phaser.Math.Angle.Between(this.scene.player.x, this.scene.player.y, this.scene.crosshair.x, this.scene.crosshair.y);
+
+            //console.log(angle);
+
+            let bullete = this.bullets.get();
+
+            //Phaser.Geom.Line.SetToAngle();
+
+            if (bullete) {
+                console.log(this.bullets.countActive(true));
+                bullete.activate(this.body.x, this.body.y);
+                bullete.body.setVelocity(this.velocity.x, this.velocity.y);
+                
+            }
             this.gun.play();
             this.gunActive = true;
-            let line = new window.Phaser.Geom.Line(this.body.x, this.body.y, this.scene.crosshair.x, this.scene.crosshair.y);
-
-            if (this.scene.zombies.length > 0) {
-
-                this.scene.zombies.forEach((zomb) => {
-
-                    if (zomb.x > this.body.x && zomb.y < this.scene.crosshair.x && zomb.y > this.body.y && zomb.y < this.scene.crosshair.y) {
-                        zomb.destroy();
-                        // delete zomb;
-                    }
-                });
-                // if (this.scene.zombie.x > this.body.x && this.scene.zombie.x < this.scene.crosshair.x && this.scene.zombie.y > this.body.y && this.scene.zombie.y < this.scene.crosshair.y) {
-                //     this.scene.zombie.destroy();
-                //     delete this.scene.zombie;
-                // }
-            }
 
             setTimeout(() => {
                 this.gunActive = false;
-                line = undefined;
             }, 100);
             this.anims.play('player_shoot3', true);
-            console.log(this.anims);
+            console.log('anims' + this.anims);
         });
 
     }
 
     update () {
+
+        //viseur
+        let angle = Phaser.Math.Angle.Between(this.x, this.y, this.scene.input.activePointer.x, this.scene.input.activePointer.y);
+        Phaser.Geom.Line.SetToAngle(this.line, this.x + Math.cos(angle) * 60, this.y + Math.sin(angle) * 60, angle, 400);
+        this.scene.physics.velocityFromRotation(angle, 3000, this.velocity);
+
         // contrôles de déplacement du joueur
         if (this.scene.cursors.up.isDown && !this.gunActive) {
             this.anims.play('player_walk', true);
@@ -83,6 +120,7 @@ export default class Player extends Phaser.GameObjects.Sprite {
         }
 
         // lookAt le viseur
-        this.rotation = Phaser.Math.Angle.Between(this.x, this.y, this.scene.crosshair.x, this.scene.crosshair.y);
+        this.rotation = Phaser.Math.Angle.Between(this.x, this.y, this.scene.input.activePointer.x, this.scene.input.activePointer.y);
+
     }
 }
